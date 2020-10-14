@@ -1,0 +1,28 @@
+.contenedor, .background
+{
+    position: relative;
+	min-height: 580px;
+	background-color: rgb(37, 39, 39);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-attachment: fixed;
+}
+.chart
+{
+    width: 10vw;
+    height: 10vw;
+}
+.background
+{
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.40689779329700626) 12%, rgba(0,0,0,0.17440479609812676) 100%);
+}
+.info
+{
+    color: rgb(143, 138, 138);
+}
+span:focus
+{
+    outline: 0;
+}

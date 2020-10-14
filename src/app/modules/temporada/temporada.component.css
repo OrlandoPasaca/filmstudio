@@ -1,0 +1,27 @@
+.still_path
+{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+@media only screen and (min-width:0px) and (max-width:576px)
+{
+    .still_path
+    {
+        height: 25vw;
+    }
+}
+@media only screen and (min-width:576px) and (max-width:768px)
+{
+    .still_path
+    {
+        height: 20vw;
+    }
+}
+@media only screen and (min-width:768px)
+{
+    .still_path
+    {
+        height: 10vw;
+    }
+}

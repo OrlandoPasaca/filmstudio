@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+*
+{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+        text-decoration: none;
+        font-family:helvetica neue,Helvetica,Arial,sans-serif;
+	
+}
+body
+{
+    background-color: rgb(37, 39, 39);
+}
+.opacidad
+{
+    animation: linear opacidad 1s ;
+}
+@keyframes opacidad
+{
+    from
+    {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+.info
+{
+    color: rgb(143, 138, 138);
+}
+
+.spinner
+{
+    animation:infinite linear giro 1s ;
+    font-size: 8vw!important;
+}
+
+@keyframes giro
+{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}

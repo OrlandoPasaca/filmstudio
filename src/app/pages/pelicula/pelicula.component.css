@@ -1,0 +1,18 @@
+
+.info
+{
+    color: rgb(143, 138, 138);
+}
+.opcion
+{
+    color:rgb(143, 138, 138);
+    cursor: pointer;
+}
+.opcion:focus
+{
+    outline: none;
+}
+.opcion_active
+{
+    border-color:#31971B!important ;
+}

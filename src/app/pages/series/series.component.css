@@ -1,0 +1,40 @@
+.contenedor, .background
+{
+    position: relative;
+	min-height: 580px;
+	background-color: rgb(37, 39, 39);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-attachment: fixed;
+}
+.cont_info
+{
+    height: auto!important;
+}
+.background
+{
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.40689779329700626) 12%, rgba(0,0,0,0.17440479609812676) 100%);
+}
+h2
+{
+    height: auto!important;
+}
+.info
+{
+    color: rgb(143, 138, 138);
+}
+.opcion
+{
+    color:rgb(143, 138, 138);
+    cursor: pointer;
+}
+.opcion:focus
+{
+    outline: none;
+}
+.opcion_active
+{
+    border-color:#31971B!important ;
+}

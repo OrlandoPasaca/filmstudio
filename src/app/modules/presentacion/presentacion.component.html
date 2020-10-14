@@ -1,0 +1,43 @@
+<div class="row p-0 m-0">
+    <div class="col-12 contenedor p-0" [style.backgroundImage]="backdrop_path">
+        <div class="row m-0 p-0 background">
+            <div class="col-1"></div>
+            <div class="col-xl-5 col-lg-6 col-md-10 col-12 ">
+                <div class="row m-0 p-0">
+                    <h2 class="col-12 text-white m-0 mt-5">{{name}}</h2>
+                    <div class="col-12">
+                        <div class="row m-0 align-items-center p-0">
+                            <div style="width: 100px; height: 100px;">
+                                <canvas #canvas width="100" height="100"></canvas>
+                                <canvas #canvas2 width="100" height="100" style="position: absolute;top: 0; left: 0;"></canvas>
+                            </div>
+                            <div class="col-2 d-none d-sm-flex text-white text-justify text-center align-items-center">
+                                Puntuacion TMDB
+                            </div>
+                            <div role="button" class="col-auto p-0 p-sm-1 ml-sm-5 d-flex">
+                                <canvas #play width="12" height="10" style="image-rendering: auto"></canvas>
+                                <span *ngIf="categoria=='pelicula'"
+                                       [routerLink]="['/watch',id]"
+                                       class="text-white font-weight-bold">
+                                       Reproducir Ahora
+                                </span>
+                                <span *ngIf="categoria=='serie'"
+                                       [routerLink]="['/watch',id]"
+                                       [queryParams]="{temporada:temporada}"
+                                       class="text-white font-weight-bold">
+                                       Reproducir Ahora
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <p class="col-12 text-white text-justify mt-0 ">{{descripcion|sinopsisgeneral:500}}</p>
+                    <p *ngIf="generos" class="col-12 mt-1  mb-0 info ">Generos: {{generos}}.</p>
+                    <p *ngIf="director && categoria=='pelicula'" class="col-12 mt-1 mb-0 info">Director: {{director[0].name}}.</p>
+                    <p *ngIf="director && categoria=='serie'" class="col-12 mt-1 mb-0 info">Creado por: {{director}}.</p>
+                </div>
+            </div>
+         </div>
+         
+    </div>
+</div>

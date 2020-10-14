@@ -1,0 +1,116 @@
+<div *ngIf="!error&&!isLoading" [style.backgroundImage]="backdrop_path" class="poster row m-0 justify-content-between">
+    <div *ngIf="categoria=='serie'" class="linear-gradient d-md-flex">
+        <div class="col-12 col-md-6 mt-9 cont-info">
+            <div class="row justify-content-center mt-4">
+                <h1 class="col-10 text-white">{{titulo}}</h1>
+                <div class="info col-10">{{year}}&nbsp;&nbsp;&nbsp;&nbsp;{{pelicula.length}} Temporadas</div>
+                <h3 class="col-10 text-white mt-2"><em>{{name_cap}}</em></h3>
+                <div class="info col-10 text-left">Temporada {{temporada}} Capitulo {{capitulo}}</div>
+                <div class="info col-10 d-none d-md-block mt-2">{{overview|sinopsisgeneral:300}}</div>
+                <div class="info col-10 d-block d-md-none mt-2">{{overview|sinopsisgeneral:150}}</div>
+            </div>
+            <div *ngIf="!view_seasons" class="row justify-content-center mt-5">
+                <button (click)="nextEpisode()" [disabled]="disabled_next"  class="btn text-left col-10 info pt-2 pb-2 buttons">
+                   <i class="fas fa-forward"></i> Siguiente Capitulo 
+                </button>
+                <button (click)="afterEpisode()" [disabled]="disabled_after" class="btn text-left col-10 info pt-2 pb-2 buttons">
+                   <i class="fas fa-backward"></i> Capitulo Anterior 
+                </button>
+                <button (click)="view_seasons=true" class="btn text-left col-10 d-none d-md-block info pt-2 pb-2 buttons">
+                    Capitulos y mas...
+                </button>
+            </div>
+            <div *ngIf="view_seasons" class="row justify-content-center mt-2">
+                <div role="button" (click)="view_seasons=false;view_episodes=false" class="col-10 text-white pt-2 pb-2 buttons">
+                   <i class="fas fa-long-arrow-alt-left"></i> Regresar
+                </div>
+                <div *ngFor="let temporada of pelicula" role="button" (click)="getdDetailsCap(temporada.temporada)" class="col-10 text-white pt-2 pb-2 buttons">
+                    Temporada {{temporada.temporada}}
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="col-12 col-md-6 d-flex flex-wrap justify-content-center align-items-center mb-3">
+            
+            <div class="row justify-content-center">
+                <div *ngIf="urls&&urls.length>0" [class.d-none]="view_episodes"   class="col-10 form-group">
+                    <select  class="form-control" [(ngModel)]="option_select">
+                        <option selected disabled>Opciones</option>
+                        <option [value]="i" *ngFor="let url of urls;let i=index">Opcion {{i+1}}</option>
+                    </select>
+                </div>
+               <iframe *ngIf="urls&&urls.length>0" 
+                        [class.d-none]="view_episodes" 
+                        [src]="urls[option_select]|sanitizer" 
+                        frameborder="0" allowfullscreen="">
+                </iframe> 
+               <div *ngIf="!urls||urls.length==0" [class.d-none]="view_episodes" class="text-white mb-3 col-10 col-md-4">
+                    :( Aun tenemos enlaces para este capitulo o pelicula
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div *ngIf="categoria=='pelicula'" class="linear-gradient">
+        <div class="col-12 mt-9">
+            <div class="row justify-content-center mt-4">
+                <h1 class="col-10 text-white">{{titulo}}</h1>
+                <div class="info col-10">{{year}}</div>
+                <div class="info col-10 d-none d-md-block">{{overview|sinopsisgeneral:300}}</div>
+                <div class="info col-10 d-block d-md-none">{{overview|sinopsisgeneral:150}}</div>
+            </div>
+        </div>
+        <div class="col-12 d-flex flex-wrap justify-content-center align-items-center mb-3">
+            
+            <div class="row justify-content-center">
+                <div *ngIf="urls&&urls.length>0" [class.d-none]="view_episodes"   class="col-10 form-group">
+                    <select  class="form-control" [(ngModel)]="option_select">
+                        <option  selected disabled>Opciones</option>
+                        <option [value]="i" *ngFor="let url of urls;let i=index">Opcion {{i+1}}</option>
+                    </select>
+                </div>
+               <iframe *ngIf="urls&&urls.length>0"
+                        class="iframe-movie mb-4"
+                        [class.d-none]="view_episodes" 
+                        [src]="urls[option_select]|sanitizer" 
+                        frameborder="0" allowfullscreen="">
+                </iframe> 
+               <div *ngIf="!urls||urls.length==0" [class.d-none]="view_episodes" class="text-white nolink col-10 mt-3 mb-2">
+                    :( Aun tenemos enlaces para este capitulo o pelicula
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div *ngIf="view_episodes" class="cont_episodes col-6 mr-2">
+            <div class="episode row mt-2" role="button"
+                 *ngFor="let episode of episodes_temporales" 
+                 [routerLink]="['/watch',id_tmdb]" 
+                 [queryParams]="{temporada:temporad_temporal,capitulo:episode.episode_number}">
+                <div class="col-12 mb-2 text-white">
+                    {{episode.episode_number}}. {{episode.name}}
+                </div>
+                <div class="still-path col-4" [style.backgroundImage]="'url(https://image.tmdb.org/t/p/w300/'+episode.still_path+')'">
+
+                </div>
+                <div class="col-8 text-white">
+                    {{episode.overview}}
+                </div>
+            </div>
+            <div *ngIf="isLoadingEpisodes" class="row poster align-items-center m-0">
+                <div class="col-12 text-white text-center">
+                    <i class="fas fa-spinner spinner"></i>
+                </div>
+            </div>
+    </div>
+</div>
+
+<div *ngIf="isLoading" class="row fake-poster align-items-center m-0">
+    <div class="col-12 text-white text-center">
+        <i class="fas fa-spinner spinner"></i>
+    </div>
+</div>
+<div class="row m-0">
+    <app-error404 *ngIf="error"></app-error404>
+</div>

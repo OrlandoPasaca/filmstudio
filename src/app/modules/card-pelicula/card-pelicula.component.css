@@ -1,0 +1,62 @@
+.contenedor
+{
+  background: linear-gradient(270deg, #cccdcd, #8d8d8d, #535251, #000000);
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+}
+
+.poster
+{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+.background
+{
+  
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+a
+{
+  top: 0;
+  z-index: 2;
+}
+.poster a:hover + .background
+{
+    opacity: 1;
+background-image: linear-gradient(180deg, rgba(8,8,8,0.7066176812521884) 0%, rgba(0,0,0,0.6001751042213761) 49%, rgba(0,0,0,0.46011908181241246) 74%, rgba(0,0,0,0.2780462526807598) 100%);
+}
+@media (min-width:1000px)
+{
+  .poster
+  {
+    height:20vw;
+  }
+}
+@media (min-width:600px) and (max-width:999px)
+{
+  .poster
+  {
+    height:30vw;
+  }
+}
+@media (min-width:0px) and (max-width:599px)
+{
+  .poster
+  {
+    height:40vw;
+  }
+}

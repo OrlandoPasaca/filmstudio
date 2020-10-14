@@ -1,0 +1,57 @@
+<div #yt id="contenedorpresentacion" >
+    <div class="contenedorpresentacion" [class.opacidad]="opacidad" [ngStyle]="{'background-image': 'url('+urlimg+')'}"> 
+     <div id="contenedordescpelpres">
+     <h2 id="titulodescrpelpres" *ngIf="categoria=='pelicula'">
+     {{titulo}}
+     </h2>
+     <h2 id="titulodescrpelpres" *ngIf="categoria=='serie'">
+         {{titulo}} {{temporada}}x{{capitulo}}
+     </h2>
+     <div id="categoriapres" class="font-weight-normal">{{categoria|titlecase}}</div>
+     <div id="estadopelpres" class="bg-danger rounded mt-2 d-none d-sm-inline-flex" *ngIf="status=='Ended'">Finalizada</div>
+     <div id="estadopelpres" class="bg-success rounded mt-2 d-none d-sm-inline-flex" *ngIf="status=='Returning Series'">En emision</div>
+     <p *ngIf="titulo"  class="info mt-2 mb-0 ">Genero: {{generos}}.</p>
+     <div id="sinopsispelpres" class="mt-1 d-none d-sm-block">
+     {{descripcion | sinopsisgeneral:312}}
+     </div>
+     <div id="sinopsispelpres" class="mt-1 d-block d-sm-none">
+     {{descripcion | sinopsisgeneral:100}}
+     </div>  
+     <div *ngIf="titulo" id="verahorapres" class="col-auto rounded p-2 m-0 mt-2 d-inline-flex align-items-center">
+     <a *ngIf="id && temporada && categoria=='serie'" [routerLink]="['/watch',id]" [queryParams]="{temporada:temporada,capitulo:capitulo}" id="link_verahora"></a>
+     <a *ngIf="id && categoria=='pelicula'" [routerLink]="['/watch',id]" id="link_verahora"></a>
+     <div id="playpres" class="mr-1">
+     </div>
+     <div id="textoverahora">Ver ahora</div>
+     </div>
+     </div>
+ </div>
+     <div role="button" id="flechaderecha" (click)="clickflecha_derecha()">
+     </div>
+     <div role="button" id="flechaizquierda" (click)="clickflecha_izquierda()">
+     </div>
+     <div id="contenedorbolas">
+         <div (click)="clickbola(i)" *ngFor="let item of cantbolas,let i=index" class="bolas" [ngStyle]="stylebola[i]">
+         </div>
+     </div>
+   
+ </div>
+ <main class="container-fluid color_fondo p-0">
+  <!-- <app-slider-home tipo="estrenos" titulo="Estrenos" class="position-relative row m-0 p-2"></app-slider-home>
+  <app-slider-home tipo="nuevos_capitulos" titulo="Nuevos Capitulos" class="position-relative row m-0 p-2"></app-slider-home>
+  <app-slider-home tipo="estrenos" titulo="Estrenos" class="position-relative row m-0 p-2"></app-slider-home>
+  <app-slider-home tipo="nuevos_capitulos" titulo="Nuevos Capitulos" class="position-relative row m-0 p-2"></app-slider-home>
+  <app-slider-home tipo="estrenos" titulo="Estrenos" class="position-relative row m-0 p-2"></app-slider-home>
+  <app-slider-home tipo="nuevos_capitulos" titulo="Nuevos Capitulos" class="position-relative row m-0 p-2"></app-slider-home> -->
+  <app-slider-home  *ngFor="let slider of n_slider;let i=index" [tipo]="tipo_slider[i]" [titulo]="titulo_slider[i]" class="position-relative row m-0 p-2"></app-slider-home>
+ </main>
+ <section *ngIf="n_slider.length<tipo_slider.length" class="fake-slider row m-0 p-2 flex-wrap justify-content-between">
+     <div class="fake-h1 col-12 mb-2">
+     </div>
+     <div  *ngFor="let poster of n_fake_poster" [ngClass]="clase_fake_poster" class="fake-poster">
+         <div class="position-relative w-100 h-100">
+ 
+         </div>
+     </div> 
+ </section>
+ 

@@ -1,0 +1,22 @@
+
+<form [formGroup]="forma" class="form-group row pl-2 pr-2 m-0 mt-3">
+    <select formControlName="temporada" class="form-control col-12 col-md-3 col-lg-2">
+        <option *ngFor="let season of seasons" [value]="season.season_number" [selected]="season.season_number==temporada">
+            {{season.name}}
+        </option>
+    </select>
+</form>
+
+<div class="row m-0 pl-2 pr-2 mt-3">
+    <div *ngFor="let episode of episodes" class="col-12 ">
+        <div class="row align-items-center justify-content-between ">
+            <div class="col-12 col-md-2 still_path" [style.backgroundImage]="'url(https://image.tmdb.org/t/p/w500/'+episode.still_path+')'"></div>
+            <div class="col-12 col-md-10">
+                <h4 class="text-white">{{episode.name}}</h4>
+                <p class="text-white text-justify">{{episode.overview}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

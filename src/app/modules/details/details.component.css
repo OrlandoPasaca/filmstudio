@@ -1,0 +1,79 @@
+.name-actor
+{
+    font-size: 0.9vw ;
+}
+.character-actor
+{
+    font-size: 0.9vw ;
+}
+.poster-actor
+{
+    height: 8vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+hr
+{
+    border-color: white;
+}
+@media only screen and (min-width:0px) and (max-width:576px)
+{
+    .poster-actor
+    {
+        height: 35vw;
+    }
+    .name-actor
+    {
+        font-size: 3.5vw;
+    }
+    .character-actor
+    {
+        font-size: 3.5vw;
+    }
+}
+@media only screen and (min-width:576px) and (max-width:768px)
+{
+    .poster-actor
+    {
+        height: 30vw;
+    }
+    .name-actor
+    {
+        font-size: 2.5vw;
+    }
+    .character-actor
+    {
+        font-size: 2.5vw;
+    }
+}
+@media only screen and (min-width:768px) and (max-width:992px)
+{
+    .poster-actor
+    {
+        height: 20vw;
+    }
+    .name-actor
+    {
+        font-size: 1.5vw;
+    }
+    .character-actor
+    {
+        font-size: 1.5vw;
+    }
+}
+@media only screen and (min-width:992px) and (max-width:1200px)
+{
+    .poster-actor
+    {
+        height: 18vw;
+    }
+    .name-actor
+    {
+        font-size: 1.3vw;
+    }
+    .character-actor
+    {
+        font-size: 1.3vw;
+    }
+}

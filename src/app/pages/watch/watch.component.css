@@ -1,0 +1,90 @@
+.buttons:hover
+{
+    border: solid rgb(45, 152, 32) 1px;
+    background-color:rgb(29, 27, 27);
+    color:white
+}
+.poster
+{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.linear-gradient
+{
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.799) 0%, rgba(0, 0, 0, 0.849) 50%, rgba(0,0,0,0) 100%);
+    
+}
+.fake-poster
+{
+  height: 50vw;
+}
+.nolink
+{
+  height: 50vw;
+}
+.cont-info
+{
+  margin-bottom: 20%;
+}
+.cont_episodes
+{
+    right: 0;
+    bottom: -10%;
+    height: 100%;
+    position: absolute;
+    overflow-y: auto;
+    z-index: 100;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:  rgb(45, 152, 32); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(23, 83, 16); 
+  }
+.still-path
+{
+    height: 10vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.episode:focus
+{
+    outline: 0;
+}
+iframe
+{
+    width: 80%;
+    height: 20vw;
+}
+.iframe-movie
+{
+  height: 30vw!important;
+}
+.info
+{
+    color: rgb(143, 138, 138);
+}
+@media only screen and (max-width:768px)
+{
+  iframe
+  {
+    height: 40vw;
+  }
+}

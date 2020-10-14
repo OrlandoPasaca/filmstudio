@@ -1,0 +1,55 @@
+<h2 class="text-white">{{titulo_slider}}</h2>
+<div class="position-relative col-12 p-0">
+    <div class="row d-flex flex-nowrap m-0 justify-content-between overflow-hidden">
+
+        <div SliderRigth
+            [transition]="transition"
+            [translate]="translate"
+            [n_peliculas]="n_peliculas"
+            [n_translate]="n_translate"
+            [posicion]="posicion"
+            [tamano]="tamano"
+            (ouput_transition)="transition=$event" 
+            (output_n_pel)="n_peliculas=$event" 
+            (output_translate)="translate=$event"
+            (ouput_n_trans)="n_translate=$event"
+            (ouput_posicion)="posicion=$event"
+             style="width: 3vw;" 
+             *ngIf="n_translate>0"
+             role="button"
+             class="col-auto p-0 flecha_slider_izquierda">
+        </div>
+
+        <div style="width: 90vw;max-width: 90vw;" class="col-11 p-0 d-flex flex-nowrap">
+            <div [style.transform]="translate"
+                 [ngClass]="{'transition_slider':transition}" 
+                 class="row d-flex flex-nowrap m-0 justify-content-between contenedor_cards">
+                <app-card-pelicula *ngFor="let x of n_peliculas;let i=index" 
+                                    [limit]="n_peliculas[i]"
+                                    [tipo_slider]="tipo_slider"
+                                    class="card_pelicula"
+                                    [ngClass]="clase">
+                </app-card-pelicula>
+            </div>
+        </div>
+
+        <div SliderLeft
+             [transition]="transition"
+             [translate]="translate"
+             [n_peliculas]="n_peliculas"
+             [n_translate]="n_translate"
+             [posicion]="posicion"
+             [tamano]="tamano"
+             (ouput_transition)="transition=$event" 
+             (output_n_pel)="n_peliculas=$event" 
+             (output_translate)="translate=$event"
+             (ouput_n_trans)="n_translate=$event"
+             (ouput_posicion)="posicion=$event"
+             style="width: 3vw;"
+             role="button"
+             class="col-auto p-0 flecha_slider_derecha">
+        </div>
+
+    </div>
+</div>
+   

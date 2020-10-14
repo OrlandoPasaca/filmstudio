@@ -1,0 +1,15 @@
+<div class="row m-0">
+    <div *ngFor="let trailer of trailers" class="col-12">
+        <div class="row mt-2 mb-2">
+            <h2 class="col-12 col-md-8 col-lg-12 col-xl-12 text-white">{{trailer.name}}</h2>
+            <iframe class="col-12 col-md-8 col-lg-6 col-xl-4" [src]="url(trailer.key)|sanitizer" 
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+        </div>    
+    </div>
+    <div *ngIf="trailers && trailers.length==0" class="col-8">
+        <div class="row fake m-0 mt-2 align-items-center text-white">
+            No hay videos disponibles :'(
+        </div>    
+    </div>
+</div>

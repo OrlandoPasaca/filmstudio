@@ -1,0 +1,66 @@
+ul li
+{
+    list-style: none;
+}
+footer
+{
+    background-color: black;
+}
+a,span
+{
+    font-family: helvetica neue,Helvetica,Arial,sans-serif;
+}
+i
+{
+    transform: rotate(180deg);
+}
+#btnControl1 ~ ul
+{
+    height: 0px;
+    overflow: hidden;
+}
+#btnControl2 ~ ul
+{
+    height: 0px;
+    overflow: hidden;
+}
+#btnControl3 ~ ul
+{
+    height: 0px;
+    overflow: hidden;
+}
+
+#btnControl1:checked ~ ul
+{
+    height: auto;
+}
+#btnControl2:checked ~ ul
+{
+    height: auto;
+}
+#btnControl3:checked ~ ul
+{
+    height: auto;
+}
+#btnControl1:checked + label i
+{
+    transform: rotate(0deg);
+}
+#btnControl2:checked + label i
+{
+    transform: rotate(0deg);
+}
+#btnControl3:checked + label i
+{
+    transform: rotate(0deg);
+}
+img
+{
+	
+	width: 200px!important;
+	height: 200px!important;
+	background-color: transparent;
+	border:0px;
+	margin-left: 1%;
+	
+}

@@ -1,0 +1,277 @@
+#contenedorpresentacion
+{
+	position: relative;
+	width: 100%;
+	min-height: 580px;
+	background-color: rgb(37, 39, 39);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	
+}
+#contenedorpresentacion:hover > .contenedorpresentacion ~ #flechaderecha
+{
+	opacity: 1;
+}
+#contenedorpresentacion:hover > .contenedorpresentacion ~ #flechaizquierda
+{
+	opacity: 1;
+}
+.contenedorpresentacion
+{
+	position: relative;
+	width: 100%;
+	min-height: 580px;
+	background-color: rgb(37, 39, 39);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	
+}
+#flechaderecha
+{
+	position: absolute;
+	opacity: 0;
+	width: 10vw;
+	height: 10vw;
+	margin:auto;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background-image: url(https://www.hiddensoft.net/icons/flecha.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	transition: 1s linear opacity;
+	filter: invert(39%) sepia(86%) saturate(733%) hue-rotate(74deg) brightness(98%) contrast(82%);
+}
+#flechaizquierda
+{
+	position: absolute;
+	opacity: 0;
+	width: 10vw;
+	height: 10vw;
+	margin:auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	background-image: url(https://www.hiddensoft.net/icons/flecha.png);
+	transform: rotate(180deg);
+
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	transition: 0.5s linear opacity;
+	filter: invert(39%) sepia(86%) saturate(733%) hue-rotate(74deg) brightness(98%) contrast(82%);
+}
+#contenedorbolas
+{
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin:auto;
+	bottom: 1%;
+	width: 30%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+		
+}
+.bolas
+{
+	position: relative;
+	display: flex;
+	width: 3vw;
+	height: 3vw;
+	border-radius: 50%;
+	margin-right: 1%;
+    margin-left: 1%;
+    
+    
+   
+}
+#contenedordescpelpres
+{
+	position: relative;
+	width: 35%;
+	color: white;
+	left: 11vw;
+	top: 5vw;
+
+}
+#sinopsispelpres
+{
+	font-family:helvetica neue,Helvetica,Arial,sans-serif;
+	text-align: justify;
+	font-size: 20px;
+}
+#titulodescrpelpres
+{
+	font-family: Arial,x-locale-body,sans-serif;
+	font-weight: bold;
+	font-size: 28px;
+}
+#verahorapres
+{
+	/* position: relative; */
+	background-color: #31971B;
+	/* display: inline-flex;
+	align-items: center;
+	width: auto;
+	padding: 4%;
+	border-radius:15px 15px 15px 15px;
+	margin-top: 4%; */
+}
+#textoverahora
+{
+	font-family:helvetica neue,Helvetica,Arial,sans-serif;
+    display: inline-flex;
+	align-items: center;
+	font-weight: bold;
+
+}
+#playpres
+{
+	width: 0; 
+	height: 0; 
+	display: inline-flex;
+	border-left: 10px solid white;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	border-right: 1px solid transparent;
+}
+.color_fondo
+{
+	background-color: rgb(37, 39, 39);
+}
+#link_verahora
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+#estadopelpres
+{
+	position: relative;
+	display: inline-flex;
+	padding: 1%;
+	background-color: rgb(51, 122, 253);
+}
+.fake-slider
+{
+	background-color: rgb(37, 39, 39);
+}
+.fake-h1
+{
+	height: 5vw;
+	background: linear-gradient(270deg, #cccdcd, #8d8d8d, #535251, #000000);
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+}
+.fake-poster
+{
+	height: 10vw;
+}
+
+.fake-poster div
+ {
+    background: linear-gradient(270deg, #cccdcd, #8d8d8d, #535251, #000000);
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+}
+.info
+{
+    color: rgb(143, 138, 138);
+}
+@media (min-width:1000px)
+{
+  .fake-poster
+  {
+    height:20vw;
+  }
+}
+@media (min-width:600px) and (max-width:999px)
+{
+  .fake-poster
+  {
+    height:30vw;
+  }
+}
+@media (min-width:0px) and (max-width:599px)
+{
+  .fake-poster
+  {
+    height:40vw;
+  }
+}
+@media only screen and (max-width:680px)
+{
+	#contenedorpresentacion
+	{
+		min-height: 500px;
+	}
+	.contenedorpresentacion
+	{
+		min-height: 500px;
+	}
+	.bolas
+	{
+		min-width: 9vw;
+		min-height: 9vw;
+	}
+}
+@media only screen and (max-width:926px)
+{
+    .bolas
+    {
+		min-width: 35px;
+		min-height: 35px;
+	}
+	#contenedorpresentacion
+	{
+		display: flex;
+		justify-content: center;
+
+	}
+	.contenedorpresentacion
+	{
+		display: flex;
+		justify-content: center;
+
+	}
+	#contenedordescpelpres
+	{
+		width: 70%;
+		left: 0;
+	}
+	
+}
+@media only screen and (max-width:640px)
+{
+	#verahorapres
+	{
+		display: none;
+	}
+}
+@media only screen and (max-width:420px)
+{
+	
+	#contenedorpresentacion
+	{
+		min-height: 550px;
+	}
+	.contenedorpresentacion
+	{
+		min-height: 550px;
+	}
+}

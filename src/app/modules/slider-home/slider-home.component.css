@@ -1,0 +1,33 @@
+.flecha_slider_izquierda
+{
+	z-index:100;
+    background-image: url(https://www.hiddensoft.net/icons/flecha.png);
+	transform: rotate(180deg);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+    filter: invert(39%) sepia(86%) saturate(733%) hue-rotate(74deg) brightness(98%) contrast(82%);
+}
+.flecha_slider_derecha
+{
+    background-image: url(https://www.hiddensoft.net/icons/flecha.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+    filter: invert(39%) sepia(86%) saturate(733%) hue-rotate(74deg) brightness(98%) contrast(82%);
+}
+.card_pelicula
+{
+    position: relative;
+	min-width:20% ;
+	z-index:100;
+}
+.contenedor_cards
+{
+	width: 90vw;
+	max-width: 90vw;
+}
+.transition_slider
+{
+	transition: transform 0.8s linear;
+}

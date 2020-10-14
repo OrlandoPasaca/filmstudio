@@ -1,0 +1,18 @@
+<div class="row m-0" [class.contenedor]="!poster_path">
+<div [style.backgroundImage]="poster_path"
+     class="position-relative col-12 pr-0 pl-0 poster">
+     <a *ngIf="id_tmdb && temporada && categoria=='serie'" class="position-absolute w-100 h-100" [routerLink]="['/serie',id_tmdb,'temporada',temporada]"></a>
+     <a *ngIf="id_tmdb && categoria=='pelicula'" class="position-absolute w-100 h-100" [routerLink]="['/pelicula',id_tmdb]"></a>
+     <div class="position-relative w-100 h-100 background"
+          >
+     <p *ngIf="nombre && categoria=='serie'" class="text-white text-center">
+        {{nombre}} <span *ngIf="tipo_slider=='recien_agregadas'">Temporada</span> {{temporada}}<span *ngIf="tipo_slider!='recien_agregadas'">x{{capitulo}}</span>
+     </p>
+     <p *ngIf="nombre && categoria=='pelicula'" class="text-white text-center">
+        {{nombre}}
+     </p>
+    </div>
+    
+    
+</div>
+</div>

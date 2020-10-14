@@ -1,0 +1,32 @@
+<nav #nav>
+		
+		<img role="button" routerLink="/home" src="../../../assets/image/logo.png" class="img-thumbnail">
+		
+		<div id="contenedormenu">
+			<ul class="opcion">
+			<a routerLink="/peliculas">Peliculas</a>
+			</ul>
+			<ul class="opcion">
+			<a routerLink="/series">Series</a>
+			</ul>
+			
+		</div>
+		<div id="contenedorbusqueda">
+			<div id="contenedorinputtext">
+				<form [formGroup]="forma">
+					<input #search id="inputtext" 
+							name="buscar"
+							formControlName="buscar" 
+							autocomplete="off"
+							type=text></form>
+				<div *ngIf="searchNav.isVisible" id="contenedorrespuestas">
+					<div *ngFor="let pelicula of peliculas" class="divrespuestasbuscador">
+						<a [routerLink]="['/pelicula',pelicula.id_tmdb]" *ngIf="pelicula.categoria=='pelicula'">{{pelicula.nombre_pelicula}}</a>
+						<a [routerLink]="['/serie',pelicula.id_tmdb]" *ngIf="pelicula.categoria=='serie'">{{pelicula.nombre_pelicula}}</a>
+					</div>
+				</div>
+            </div>
+			<input id="inputbutton" type="button">
+		</div>
+        	
+</nav>

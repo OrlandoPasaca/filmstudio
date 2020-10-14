@@ -1,0 +1,21 @@
+<app-presentacion></app-presentacion>
+<div class="row border-bottom border-light m-0 p-0 mt-1">
+    <div role="none" class="col-4 col-md-2 col-xl-1 opcion text-center border-top" 
+         routerLinkActive="text-white opcion_active" 
+         [routerLink]="['temporada',temporada]"
+         [routerLinkActiveOptions]="{exact: true,__change_detection_hack__:temporada}">
+         Temporadas
+    </div>
+    <div role="none" class="col-4 col-md-2 col-xl-1 opcion text-center border-top" 
+         routerLinkActive="text-white opcion_active" 
+         routerLink="trailers">
+         Trailers
+    </div>
+    <div role="none" class="col-4 col-md-2 col-xl-1 opcion text-center border-top" 
+         routerLinkActive="text-white opcion_active" 
+         routerLink="details">
+         Mas...
+    </div>
+</div>
+
+<router-outlet></router-outlet>
